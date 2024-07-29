@@ -24,6 +24,8 @@ jobs:
         uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
         with:
           arguments: build
+      - name:LS
+        run: ls
 # 上传文件并发布 Release
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -32,4 +34,4 @@ jobs:
            prerelease: false
            title: "Triton自动构建"
            files: |
-             build/lib/*.jar
+             target/*.jar
