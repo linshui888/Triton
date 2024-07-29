@@ -25,11 +25,7 @@ jobs:
         with:
           arguments: build
           
-      - name: t1
-        run: cd build 
-      - name: wwwwww
-        run: ls
-    
+
 # 上传文件并发布 Release
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -38,4 +34,4 @@ jobs:
            prerelease: false
            title: "Triton自动构建"
            files: |
-             target/*.jar
+             build/libs/*.jar
