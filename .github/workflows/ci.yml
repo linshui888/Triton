@@ -25,6 +25,8 @@ jobs:
         with:
           arguments: build
           
+      - name: t1
+        run: cd build 
       - name: wwwwww
         run: ls
     
