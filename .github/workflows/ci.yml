@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI
+name: Triton
 
 on: [push]
 
@@ -24,3 +24,12 @@ jobs:
         uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
         with:
           arguments: build
+# 上传文件并发布 Release
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+           repo_token: "${{ secrets.GITHUB_TOKEN }}"
+           automatic_release_tag: "triton"
+           prerelease: false
+           title: "Triton自动构建"
+           files: |
+             build/lib/*.jar
